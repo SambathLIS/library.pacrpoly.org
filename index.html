@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>University Library | Modern Academic Portal</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --primary: #8c1515;   /* Stanford red */
+      --secondary: #2e2d29; /* Ivy dark */
+      --accent: #cfae70;    /* Gold */
+      --bg: #f9fafb;
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--secondary);
+      line-height: 1.6;
+    }
+
+    /* ================= HEADER ================= */
+    header {
+      background: #fff;
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--primary);
+    }
+
+    nav a {
+      margin-left: 2rem;
+      text-decoration: none;
+      font-weight: 500;
+      color: var(--secondary);
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: -6px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* ================= HERO ================= */
+    .hero {
+      padding: 5rem 3rem;
+      text-align: center;
+      background: linear-gradient(180deg, #ffffff, #f4f4f4);
+    }
+
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .search-box {
+      max-width: 650px;
+      margin: auto;
+      display: flex;
+      background: #fff;
+      border-radius: 50px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    .search-box input {
+      flex: 1;
+      border: none;
+      padding: 1.2rem 1.5rem;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .search-box button {
+      background: var(--primary);
+      border: none;
+      color: #fff;
+      padding: 0 2rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    /* ================= SERVICES ================= */
+    .services {
+      padding: 5rem 3rem;
+    }
+
+    .services h2 {
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 2.4rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2.5rem;
+    }
+
+    /* ===== STACK CARD ===== */
+    .stack-card {
+      position: relative;
+      height: 260px;
+      cursor: pointer;
+    }
+
+    .card-front,
+    .card-back {
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius);
+      transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .card-back {
+      background: linear-gradient(135deg, var(--primary), #5e0f0f);
+      transform: translate(14px, 14px) scale(0.96);
+      opacity: 0;
+      z-index: 1;
+    }
+
+    .card-front {
+      background: #fff;
+      padding: 2rem;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .card-front i {
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .card-front h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+    }
+
+    .stack-card:hover .card-front {
+      transform: translate(-8px, -12px);
+      box-shadow: 0 26px 65px rgba(0,0,0,0.15);
+    }
+
+    .stack-card:hover .card-back {
+      opacity: 1;
+      transform: translate(10px, 10px) scale(1);
+    }
+
+    /* ================= FOOTER ================= */
+    footer {
+      background: var(--secondary);
+      color: #eee;
+      padding: 3rem;
+      margin-top: 5rem;
+    }
+
+    footer p {
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    /* ===== Accessibility & Motion ===== */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>LIBARAY Services</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Collections</a>
+      <a href="#">E-Resources</a>
+      <a href="#">Research</a>
+      <a href="#">About</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Gateway to Knowledge & Research</h2>
+    <p>Discover books, journals, digital archives, and scholarly resources curated for academic excellence.</p>
+
+    <div class="search-box">
+      <input type="text" placeholder="Search books, journals, databases..." />
+      <button><i class="fas fa-search"></i></button>
+    </div>
+  </section>
+
+  <section class="services">
+    <h2>Library Services</h2>
+
+    <div class="card-grid">
+      <div class="stack-card">
+        <div class="card-back"></div>
+        <div class="card-front">
+          <i class="fas fa-book"></i>
+          <h3>Print Collections</h3>
+          <p>Textbooks, reference works, and rare academic volumes.</p>
+        </div>
+      </div>
+
+      <div class="stack-card">
+        <div class="card-back"></div>
+        <div class="card-front">
+          <i class="fas fa-database"></i>
+          <h3>Digital Resources</h3>
+          <p>e-Journals, e-Books, databases, and institutional repositories.</p>
+        </div>
+      </div>
+
+      <div class="stack-card">
+        <div class="card-back"></div>
+        <div class="card-front">
+          <i class="fas fa-graduation-cap"></i>
+          <h3>Research Support</h3>
+          <p>Citations, plagiarism tools, and scholarly guidance.</p>
+        </div>
+      </div>
+
+      <div class="stack-card">
+        <div class="card-back"></div>
+        <div class="card-front">
+          <i class="fas fa-users"></i>
+          <h3>User Services</h3>
+          <p>Circulation, reference help, and information literacy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 University Library · Inspired by Ivy League Academic Design</p>
+  </footer>
+
+</body>
+</html>
