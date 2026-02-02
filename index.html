@@ -13,9 +13,9 @@
 
   <style>
     :root {
-      --primary: #8c1515;   /* Stanford red */
-      --secondary: #2e2d29; /* Ivy dark */
-      --accent: #cfae70;    /* Gold */
+      --primary: #8c1515;
+      --secondary: #2e2d29;
+      --accent: #cfae70;
       --bg: #f9fafb;
       --radius: 18px;
     }
@@ -33,7 +33,28 @@
       line-height: 1.6;
     }
 
-    /* ================= HEADER ================= */
+    /* ================= TOP Colllege Name BAR ================= */
+    .top-header {
+      background: var(--primary);
+      height: 48px;
+      display: flex;
+      align-items: Left;
+      justify-content: left;
+    }
+
+    .top-header a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    .top-header a:hover {
+      text-decoration: underline;
+    }
+
+    /* ================= MAIN HEADER ================= */
     header {
       background: #fff;
       padding: 1.5rem 3rem;
@@ -42,7 +63,7 @@
       align-items: center;
       box-shadow: 0 6px 20px rgba(0,0,0,0.05);
       position: sticky;
-      top: 0;
+      top: 48px; /* below top header */
       z-index: 100;
     }
 
@@ -140,7 +161,6 @@
       gap: 2.5rem;
     }
 
-    /* ===== STACK CARD ===== */
     .stack-card {
       position: relative;
       height: 260px;
@@ -159,14 +179,12 @@
       background: linear-gradient(135deg, var(--primary), #5e0f0f);
       transform: translate(14px, 14px) scale(0.96);
       opacity: 0;
-      z-index: 1;
     }
 
     .card-front {
       background: #fff;
       padding: 2rem;
       box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-      z-index: 2;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -178,14 +196,8 @@
       margin-bottom: 1rem;
     }
 
-    .card-front h3 {
-      margin-bottom: 0.5rem;
-      font-size: 1.3rem;
-    }
-
     .stack-card:hover .card-front {
       transform: translate(-8px, -12px);
-      box-shadow: 0 26px 65px rgba(0,0,0,0.15);
     }
 
     .stack-card:hover .card-back {
@@ -199,25 +211,22 @@
       color: #eee;
       padding: 3rem;
       margin-top: 5rem;
-    }
-
-    footer p {
       text-align: center;
-      font-size: 0.9rem;
-    }
-
-    /* ===== Accessibility & Motion ===== */
-    @media (prefers-reduced-motion: reduce) {
-      * {
-        transition: none !important;
-      }
     }
   </style>
 </head>
+
 <body>
 
+  <!-- Top University Header -->
+  <div class="top-header">
+    <a href="https://www.pacrpoly.org/">P.A.C.Ramasamy Raja Polytechnic College
+</a>
+  </div>
+
+  <!-- Main Library Header -->
   <header>
-    <h1>LIBARAY Services</h1>
+    <h1>Library Services</h1>
     <nav>
       <a href="#">Home</a>
       <a href="#">Collections</a>
